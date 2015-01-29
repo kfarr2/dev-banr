@@ -1,0 +1,36 @@
+<VirtualHost *:80>
+
+    #----------------------GENERAL VHOST STUFF THAT SHOULD ALREADY BE IN VHOST.CONF-----------------------
+    ServerName mintemplate
+    ServerAlias 10.0.0.10.*
+    DocumentRoot /home/path/to/dev-banr
+
+    # Logs
+    ErrorLog /var/log/httpd/django.local.error_log
+    CustomLog /var/log/httpd/django.local.access_log vhost
+
+    WSGIDaemonProcess mintemplate processes=2 threads=25 display-name=%{GROUP} python-path=/home/utils/dev-banr/.env/lib/python3.3/site-packages
+    WSGIProcessGroup mintemplate
+    WSGIScriptAlias / /path/to/wsgi.py
+
+    Alias /static /path/to/static
+
+    # Wsgi file stuff
+    <Directory /home/utils/dev-banner/mintemplate >
+        AllowOverride All
+        Options Indexes FollowSymLinks
+        <Files wsgi.py>
+            Require all granted
+        </Files>
+    </Directory>
+    #------------------------------------------------------------------------------------------------------
+
+
+    # Copy and paste this part into your vhosts.conf file, and replace src='' with the actual url
+    <Directory />
+        Allow from all
+        AddOutputFilterByType SUBSTITUTE text/html
+        Substitute "s|</body>|$1<script src=''></script></body>|i"
+    </Directory>
+
+</VirtualHost>

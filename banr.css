@@ -1,0 +1,36 @@
+.banner {
+    color: #ccc;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    max-height: 100px;
+    overflow: hidden;
+}
+
+#hide-banr {
+    margin: 10px;
+}
+
+#hide-banr:hover {
+    color: #666;
+    cursor: pointer;
+}
+
+h3 {
+    margin-top: -5px;
+    word-wrap: break-word;
+}
+
+img {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
