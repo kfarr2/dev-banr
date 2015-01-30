@@ -10,11 +10,8 @@
  *
  */
 
-// This function does it all. It takes
-// the html page, parses it into a variable,
-// then injects the variable text into the
-// page.
 
+// JSON object to hold some banner messages
 var text = '{ "message" : [' +
     '{ "text": "I dont always go to the DEV site, but when I do I make sure I didnt actually mean to go to the PROD site." },' +
     '{ "text": "Such DEV site. Very prototype. Not PROD site. Wow."},' +
@@ -30,6 +27,10 @@ function hideAll(){
 }
 
 
+// This function does it all. It takes
+// the html page, parses it into a variable,
+// then injects the variable text into the
+// page.
 function banr(){
     // Setup
     var markup = document.documentElement.innerHTML;
@@ -42,12 +43,10 @@ function banr(){
     }
     var num = Math.floor(Math.random() * length);
 
+    // Check the cookie and set the visibility
     if(document.cookie.indexOf("hidecookie=True") == -1){
         // Inject HTML from banr.html
         try {
-            //xmlhttp.open("get", here + "banr.html", false);
-            //xmlhttp.send(null);
-            //banner = "<link href='" + here + "banr.css' rel='stylesheet' />";
             banner = '<div id="banr-div" style="background-color: #333; color: #ccc; height: 50px; max-height: 50px;">'+
                 '<p class="col-md-11" style="text-align: center; font-size: 28px;">' + obj.message[num].text + '</p>' +
                 '<a class="col-md-1 text-right" onclick="hideAll();">Hide</a>' +
@@ -57,12 +56,6 @@ function banr(){
             document.body.innerHTML = output;
         } catch(e){ // XMLHttp is undefined or something
             alert("Something went wrong\n" + obj);
-        }
-    } else {
-        try{
-            document.getElementById("banr-div").style.display = "none";
-        } catch(e){
-            // Banner is already hidden
         }
     }
 }
