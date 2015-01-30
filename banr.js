@@ -37,11 +37,7 @@ function banr(){
     var output, banner = '';
     var tag = "<body>";
     var obj = JSON.parse(text);
-    var length = 0;
-    for( message in obj.message){
-        length++;
-    }
-    var num = Math.floor(Math.random() * length);
+    var num = Math.floor(Math.random() * obj.message.length);
 
     // Check the cookie and set the visibility
     if(document.cookie.indexOf("hidecookie=True") == -1){
