@@ -1,8 +1,8 @@
 # Dev-Banr
 
 Dev-banr is a way to inject a banner into the markup of an html response.
-The main purpose is to allow the .js, .css and .html files to be hosted elsewhere
-on a server, and are referenced and injected into a webpage by the vhost.conf file
+The main purpose is to allow the banr.js file to be hosted elsewhere
+on a server, and be called at runtime by the vhost.conf file.
 
 ##Instructions
 
