@@ -15,7 +15,7 @@ var text = '{ "message" : [' +
     '{ "text": "I dont always go to the DEV site, but when I do I make sure I didnt actually mean to go to the PROD site." },' +
     '{ "text": "Such DEV site. Very prototype. Not PROD site. Wow."},' +
     '{ "text": "We cant stop here! This is the DEV site!"},' +
-    '{ "text": "Waitaminute. How did we end up on the DEV site??"},'
+    '{ "text": "Waitaminute. How did we end up on the DEV site??"},' +
     '{ "text": "Youre on the DEV site, Harry!"}' +
     ']}';
 
