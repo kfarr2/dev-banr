@@ -10,15 +10,14 @@
  *
  */
 
-
 // JSON object to hold some banner messages
 var text = '{ "message" : [' +
     '{ "text": "I dont always go to the DEV site, but when I do I make sure I didnt actually mean to go to the PROD site." },' +
     '{ "text": "Such DEV site. Very prototype. Not PROD site. Wow."},' +
     '{ "text": "We cant stop here! This is the DEV site!"},' +
+    '{ "text": "Waitaminute. How did we end up on the DEV site??"},'
     '{ "text": "Youre on the DEV site, Harry!"}' +
     ']}';
-
 
 // Called by HTML. Hides the entire banner for 300 seconds (5 mins).
 function hideAll(){
@@ -26,11 +25,8 @@ function hideAll(){
     document.cookie = "hidecookie=True; max-age=300; path=/;";
 }
 
-
-// This function does it all. It takes
-// the html page, parses it into a variable,
-// then injects the variable text into the
-// page.
+// This function does it all. It takes the html page, parses it into a variable,
+// then injects the variable text into the page.
 function banr(){
     // Setup
     var markup = document.documentElement.innerHTML;
@@ -44,8 +40,8 @@ function banr(){
         // Inject HTML from banr.html
         try {
             banner = '<div id="banr-div" style="background-color: #333; color: #ccc; height: 50px; max-height: 50px;">'+
-                '<p class="col-md-11" style="text-align: center; font-size: 28px;">' + obj.message[num].text + '</p>' +
-                '<a class="col-md-1 text-right" onclick="hideAll();">Hide</a>' +
+                '<div class="col-md-11"><p style="text-align: center; font-size: 24px; margin: 7px;">' + obj.message[num].text + '</p></div>' +
+                '<a class="col-md-1 text-right" onclick="hideAll();" style="color: #ddd; margin-top: 5px;">Hide</a>' +
                 '</div>';
 
             output = markup.substr(0, markup.indexOf(tag) + tag.length) + banner + markup.substr(markup.indexOf(tag) + tag.length)
