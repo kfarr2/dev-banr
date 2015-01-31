@@ -1,22 +1,22 @@
 <VirtualHost *:80>
 
     #----------------------GENERAL VHOST STUFF THAT SHOULD ALREADY BE IN VHOST.CONF-----------------------
-    ServerName mintemplate
-    ServerAlias 10.0.0.10.*
+    ServerName devbanr
+    ServerAlias devbanr.local 
     DocumentRoot /home/path/to/dev-banr
 
     # Logs
     ErrorLog /var/log/httpd/django.local.error_log
     CustomLog /var/log/httpd/django.local.access_log vhost
 
-    WSGIDaemonProcess mintemplate processes=2 threads=25 display-name=%{GROUP} python-path=/home/utils/dev-banr/.env/lib/python3.3/site-packages
-    WSGIProcessGroup mintemplate
+    WSGIDaemonProcess devbanr processes=2 threads=25 display-name=%{GROUP} python-path=/path/to/virtual/environment/or/site/packages
+    WSGIProcessGroup devbanr
     WSGIScriptAlias / /path/to/wsgi.py
 
     Alias /static /path/to/static
 
     # Wsgi file stuff
-    <Directory /home/utils/dev-banner/mintemplate >
+    <Directory /path/to/wsgi/file >
         AllowOverride All
         Options Indexes FollowSymLinks
         <Files wsgi.py>
