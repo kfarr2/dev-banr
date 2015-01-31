@@ -26,7 +26,8 @@
     #------------------------------------------------------------------------------------------------------
 
 
-    # Copy and paste this part into your vhosts.conf file, and replace src='' with the actual url
+    # Copy and paste this part into your vhosts.conf file, and replace src='' with the actual
+    # path to banr.js
     <Directory />
         Allow from all
         AddOutputFilterByType SUBSTITUTE text/html
