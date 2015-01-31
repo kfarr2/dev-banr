@@ -8,10 +8,10 @@ on a server, and be called at runtime by the vhost.conf file.
 
 1. Move the banr directory to the desired location.
 
-2. Copy and paste the specified code from vhost.conf.example into your site's vhost.conf file
+2. Copy and paste the specified code from vhost.conf.example into your site's vhost.conf file.
 
-3. Edit the url pointed to in the Substitute command to point to the new location of banr
+3. Edit the url in the Substitute command to point to the new location of banr.
 
 4. ???
 
-5. Profit
+5. Profit.
